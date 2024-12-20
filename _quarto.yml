@@ -5,6 +5,8 @@ website:
   title: "Homo Calculans"
   navbar:
     right:
+      - text: "Blog"
+        href: index.qmd
       - about.qmd
   site-url: "https://homo-calculans.blog"
 resources:
