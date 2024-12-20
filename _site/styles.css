@@ -1,0 +1,6 @@
+/* css styles */
+@font-face {
+  font-family: PressStart2P;
+  src:url("assets/fonts/PressStart2P-vaV7.ttf");
+}
+$headings-font-family:  "PressStart2P";
