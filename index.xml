@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Homo Calculans</title>
+<link>https://homo-calculans.blog/</link>
+<atom:link href="https://homo-calculans.blog/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.6.39</generator>
+<lastBuildDate>Fri, 20 Dec 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Reckoning Humanity</title>
+  <dc:creator>Michael Falk</dc:creator>
+  <link>https://homo-calculans.blog/posts/initial/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>What are the “Human Sciences”? How have they been “computerised”? Both questions have an antique ring. In Australia, where I live and work, no-one calls themself a “human scientist,” except perhaps for the odd biologist or psychologist. And in our “digital” age, terms such as “digitisation,” “digitalisation” or “digital transformation” are far more popular than the old term “computerisation,” which smacks of dusty punch-cards and clunking microcomputers from 1980s schoolrooms.</p>
+<p>And yet the question, “how were the human sciences computerised,” is an essential one. Today, computing is more humanistic than ever. The Generative AI revolution has suddenly narrowed the perceived gap between humans and machines. Meanwhile, the growth of <a href="https://en.wikipedia.org/wiki/Surveillance_capitalism">surveillance capitalism</a> has made the collection and analysis of human data into a big business and a socio-political nightmare. Now we all have an interest in the question: What can we learn about human beings through the use of computation?</p>
+<p>In this project, I want to take the question back to the beginning. I want to take it back to the 1950s and 60s, when fast digital computers were brand new, and scholars of humankind were only just getting their hands on them. In those days, the concept of the “computer” was <em>fresh</em>. The metaphors people used to describe computers were <em>live</em>. The arguments people made about the possible applications of computing were <em>wild</em> and often <em>utopian</em>. If we go back to that more creative age, we might be able to reopen that creativity, and address the problems of today.</p>
+<p>This is a pilot project, that will unfold over the course of 2025. Stay tuned, to learn about how humans were datafied in the early days, and to discover new old ways to harness the power of computation to achieve the age-old goal of the human sciences: a gentler, more philsophical, more enlightened understanding of our plural condition on this fragile earth.</p>
+
+
+
+ ]]></description>
+  <guid>https://homo-calculans.blog/posts/initial/</guid>
+  <pubDate>Fri, 20 Dec 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://homo-calculans.blog/assets/img/Coding_01.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

@@ -1,1 +1,1 @@
-Sitemap: https://michaelgfalk.github.io/homo-calculans/sitemap.xml
+Sitemap: https://homo-calculans.blog/sitemap.xml
