@@ -6,6 +6,7 @@ website:
   navbar:
     right:
       - about.qmd
+  site-url: "https://homo-calculans.blog"
 resources:
     - "assets/*"
 format:
