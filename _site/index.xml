@@ -9,8 +9,573 @@
 <link>https://homo-calculans.blog/</link>
 <atom:link href="https://homo-calculans.blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.6.39</generator>
-<lastBuildDate>Thu, 19 Dec 2024 14:00:00 GMT</lastBuildDate>
+<generator>quarto-1.7.32</generator>
+<lastBuildDate>Mon, 04 Aug 2025 14:00:00 GMT</lastBuildDate>
+<item>
+  <title>The homo calculans corpus</title>
+  <dc:creator>Michael Falk</dc:creator>
+  <link>https://homo-calculans.blog/posts/corpus/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="a-corpus-a-corpus" class="level2">
+<h2 class="anchored" data-anchor-id="a-corpus-a-corpus">A corpus! A corpus!</h2>
+<p>Thanks to the hard work of Niles Zhao, the <em>homo calculans</em> project now possesses a corpus of articles, books and chapters from the early years of the Computational Human Sciences. The field was vaster than either of us expected. When we started the project, I expected that we would be able to get essentially <em>all</em> the articles from the period that reported on computer-enabled research.</p>
+<p>Boy was I wrong.</p>
+<p>By the mid-1960s, there was already a large community of computational humanists and social scientists, and research methods were rapidly maturing. Experimentalism was rife. Computer power was, it seems, relatively abundant.</p>
+<p>In this post, I will just sketch the outlines of the corpus, relying on the metadata Niles has collected about the articles, books, and chapters, and the annotations he has made about research disciplines and the available hardware.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">corpus <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> readr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_csv</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"corpus-2025-initial.csv"</span>,) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb1-2">  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># normalise tags</span></span>
+<span id="cb1-3">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">tag =</span> stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_split</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Manual Tags</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">";"</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb1-4">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">tag =</span> purrr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map</span>(tag, \(t) stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_trim</span>(t))) </span>
+<span id="cb1-5"></span>
+<span id="cb1-6">corpus_n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">nrow</span>(corpus)</span>
+<span id="cb1-7">corpus_n_with_text <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> corpus <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb1-8">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">is.na</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">File Attachments</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb1-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">nrow</span>()</span>
+<span id="cb1-10">types_n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">unique</span>(corpus<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Item Type</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">length</span>()</span></code></pre></div>
+</details>
+</div>
+</section>
+<section id="whats-in-it" class="level2">
+<h2 class="anchored" data-anchor-id="whats-in-it">What’s in it?</h2>
+<p>In this present state, the corpus includes 399 academic texts. We have pdfs for 387 of these, though hopefully we will be able to increase this proportion before the project ends. The corpus includes 6 kinds of text, though it is dominated by Journal Articles, as shown in Figure&nbsp;1.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">corpus <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb2-2">  ggplot2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(ggplot2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">Item Type</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb2-3">  ggplot2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_bar</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb2-4">  ggplot2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_x_discrete</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">labels =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(</span>
+<span id="cb2-5">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"book"</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Book"</span>,</span>
+<span id="cb2-6">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bookSection"</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Chapter"</span>,</span>
+<span id="cb2-7">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"conferencePaper"</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Conference Paper"</span>,</span>
+<span id="cb2-8">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"journalArticle"</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Journal Article"</span>,</span>
+<span id="cb2-9">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"magazineArticle"</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Magazine Article"</span>,</span>
+<span id="cb2-10">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"report"</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Report"</span></span>
+<span id="cb2-11">  ))</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-item-type-hist" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-item-type-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://homo-calculans.blog/posts/corpus/index_files/figure-html/fig-item-type-hist-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-item-type-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The items in the corpus are mostly journal articles, as expected.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="which-disciplines-are-represented" class="level2">
+<h2 class="anchored" data-anchor-id="which-disciplines-are-represented">Which disciplines are represented?</h2>
+<p>Who was doing this research in the 1950s and 60s? Which disciplines were at the forefront? We were hoping to be able to give crisp, empirical answers to these questions, but the literature turned out to be so large that is has proven hard to sample the population. For now, we can just see which disciplines appear to be represented in the corpus that we have.</p>
+<p>Niles tagged the items in Zotero, which is great because it is flexible, but not so great because the tags are unstructured. First we need to sort the tags into two groups: discipline tags and technology tags.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Get list of tags for categorisation</span></span>
+<span id="cb3-2">corpus <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-3">  tidyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">unnest</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(tag)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb3-4">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">distinct</span>(tag) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb3-5">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">tag_category =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">""</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb3-6">  readr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">write_csv</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"all-tags.csv"</span>)</span>
+<span id="cb3-7"></span>
+<span id="cb3-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Import categorised tags</span></span>
+<span id="cb3-9">tag_categories <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> readr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_csv</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"all-tags-categorised.csv"</span>)</span></code></pre></div>
+</details>
+</div>
+<p>Once we have (very roughly) categorised the tags, we can take a look at the summary statistics. Figure&nbsp;2 shows the disciplines represented in the corpus. The corpus already suggests new lines of inquiry. The social science disciplines are not so surprising, but it is intriguing to note the presence of many Visual Arts and Musiology articles. These disciplines do not feature heavily in the mainstream historiography of Digital Humanities, which has tended to focus on early efforts in literature and linguistics.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">disciplines <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> corpus <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb4-2">  tidyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">unnest</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(tag)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb4-3">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">left_join</span>(tag_categories, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">by=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tag"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb4-4">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(tag_category <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"discipline"</span>, <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">is.na</span>(tag)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb4-5">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(tag) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb4-6">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">n</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb4-7"></span>
+<span id="cb4-8">disciplines <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb4-9">  ggplot2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(ggplot2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y=</span>tag)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-10">  ggplot2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_bar</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-11">  ggplot2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(</span>
+<span id="cb4-12">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Discipline"</span>,</span>
+<span id="cb4-13">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> glue<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">glue</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Number of Articles (n = {nrow(disciplines)})."</span>)</span>
+<span id="cb4-14">  )</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-disciplines" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-disciplines-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://homo-calculans.blog/posts/corpus/index_files/figure-html/fig-disciplines-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-disciplines-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Musicology and Visual Arts have probably been overlooked in the early history of CHS. Disciplines with only one article excluded.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="what-computers-were-in-use" class="level2">
+<h2 class="anchored" data-anchor-id="what-computers-were-in-use">What computers were in use?</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">computers <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> corpus <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb5-2">  tidyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">unnest</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(tag)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb5-3">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">left_join</span>(tag_categories, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">by=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tag"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb5-4">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(tag_category <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"computer"</span>, <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">is.na</span>(tag))</span></code></pre></div>
+</details>
+</div>
+<p>The computer tags also paint an intriguing picture of the early period of CHS. 74 distinct models of computer are mentioned in the corpus—we may find more as we dig deeper. Although there are many models in the corpus, a few big brands or lines of computer dominate, as shown in <strong>?@fig-computers</strong>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">computers <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb6-2">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">select</span>(tag) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb6-3">  dplyr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb6-4">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">tag =</span> stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_remove</span>(tag, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Computer: "</span>),</span>
+<span id="cb6-5">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">brand =</span> stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(tag, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\\</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">w+"</span>)</span>
+<span id="cb6-6">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb6-7">  ggplot2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(ggplot2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y=</span>brand)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb6-8">  ggplot2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_bar</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb6-9">  ggplot2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(</span>
+<span id="cb6-10">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Brand"</span>,</span>
+<span id="cb6-11">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> glue<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">glue</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Models Mentioned (n = {nrow(computers)} mentions in {length(unique(computers$Key))} articles)"</span>)</span>
+<span id="cb6-12">  )</span></code></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://homo-calculans.blog/posts/corpus/index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>?@fig-computers</strong> will be unsurprisng to readers familiar with the history of computers. IBM was the dominant manufacturer of large computers in this period. By the mid-sixties, mini-computers were becoming more popular, two of the most famous brands being <a href="https://en.wikipedia.org/wiki/Control_Data_Corporation">Control Data Corporation</a> (CDC) and <a href="https://en.wikipedia.org/wiki/Digital_Equipment_Corporation">Digital Equipment Corporation</a> (who manufactured the <a href="https://en.wikipedia.org/wiki/Programmed_Data_Processor">PDP line of computers</a>). The <a href="https://en.wikipedia.org/wiki/ILLIAC">Illiac</a> computers present a fascinating case of early use of computation in the Human Sciences. As well as a statistical machine, it was a machine for musical composition, and was used to create the <em>Illiac Suite</em> <span class="citation" data-cites="hiller_computer_1964">(Hiller and Baker 1964)</span>. You can listen to part of the suite on Spotify:</p>
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6ikV7mM1mwzFDrhmK4bNxE?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
+</section>
+<section id="where-to-from-here" class="level2">
+<h2 class="anchored" data-anchor-id="where-to-from-here">Where to from here?</h2>
+<p>Next, we need to tidy up the corpus a bit, and get the text of the articles into R. Then we can get to the meat of the <em>homo calculans</em> project—the <em>discourse</em> of Computational Human Sciences in the 1950s and 60s. What did these early pioneers think they were doing? How did they justify there strange experiments in computational method? I am excited to find out…</p>
+<p><em>Image credit: Alice (Betsy) E. D. Gillies and Donald B. Gillies with the ILLIAC I at the Digital Computer Lab, Urbana Illinois, circa 1958. By SystemBuilder. <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=93330530">permalink</a></em></p>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0">
+<div id="ref-hiller_computer_1964" class="csl-entry">
+Hiller, Lejaren A., and Robert A. Baker. 1964. <span>“Computer <span>Cantata</span>: <span>A</span> <span>Study</span> in <span>Compositional</span> <span>Method</span>.”</span> <em>Perspectives of New Music</em> 3 (1): 62. <a href="https://doi.org/10.2307/832238">https://doi.org/10.2307/832238</a>.
+</div>
+</div></section></div> ]]></description>
+  <guid>https://homo-calculans.blog/posts/corpus/</guid>
+  <pubDate>Mon, 04 Aug 2025 14:00:00 GMT</pubDate>
+  <media:content url="https://homo-calculans.blog/assets/img/illiac.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Reckoning Humanity</title>
   <dc:creator>Michael Falk</dc:creator>
@@ -30,7 +595,7 @@
 
  ]]></description>
   <guid>https://homo-calculans.blog/posts/initial/</guid>
-  <pubDate>Thu, 19 Dec 2024 14:00:00 GMT</pubDate>
+  <pubDate>Thu, 19 Dec 2024 13:00:00 GMT</pubDate>
   <media:content url="https://homo-calculans.blog/assets/img/Coding_01.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>

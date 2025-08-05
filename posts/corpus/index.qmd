@@ -1,0 +1,128 @@
+---
+title: "The *homo calculans* corpus"
+description: "The shape of CHS in the 1950s and 60s"
+author: "Michael Falk"
+date: "2025/08/05"
+image: "/assets/img/illiac.jpg"
+code-fold: true
+bibliography: corpus-initial.bib
+---
+
+## A corpus! A corpus!
+
+Thanks to the hard work of Niles Zhao, the *homo calculans* project now possesses a corpus of articles, books and chapters from the early years of the Computational Human Sciences. The field was vaster than either of us expected. When we started the project, I expected that we would be able to get essentially *all* the articles from the period that reported on computer-enabled research.
+
+Boy was I wrong.
+
+By the mid-1960s, there was already a large community of computational humanists and social scientists, and research methods were rapidly maturing. Experimentalism was rife. Computer power was, it seems, relatively abundant.
+
+In this post, I will just sketch the outlines of the corpus, relying on the metadata Niles has collected about the articles, books, and chapters, and the annotations he has made about research disciplines and the available hardware.
+
+```{r}
+#| output: false
+corpus <- readr::read_csv("corpus-2025-initial.csv",) |> 
+  # normalise tags
+  dplyr::mutate(tag = stringr::str_split(`Manual Tags`, ";")) |> 
+  dplyr::mutate(tag = purrr::map(tag, \(t) stringr::str_trim(t))) 
+
+corpus_n <- nrow(corpus)
+corpus_n_with_text <- corpus |> 
+  dplyr::filter(!is.na(`File Attachments`)) |> 
+  nrow()
+types_n <- unique(corpus$`Item Type`) |> length()
+```
+## What's in it?
+
+In this present state, the corpus includes `r corpus_n` academic texts. We have pdfs for `r corpus_n_with_text` of these, though hopefully we will be able to increase this proportion before the project ends. The corpus includes `r types_n` kinds of text, though it is dominated by Journal Articles, as shown in @fig-item-type-hist.
+
+```{r}
+#| label: fig-item-type-hist
+#| fig-cap: The items in the corpus are mostly journal articles, as expected.
+corpus |> 
+  ggplot2::ggplot(ggplot2::aes(`Item Type`)) + 
+  ggplot2::geom_bar() +
+  ggplot2::scale_x_discrete(labels = c(
+    "book" = "Book",
+    "bookSection" = "Chapter",
+    "conferencePaper" = "Conference Paper",
+    "journalArticle" = "Journal Article",
+    "magazineArticle" = "Magazine Article",
+    "report" = "Report"
+  ))
+```
+
+## Which disciplines are represented?
+
+Who was doing this research in the 1950s and 60s? Which disciplines were at the forefront? We were hoping to be able to give crisp, empirical answers to these questions, but the literature turned out to be so large that is has proven hard to sample the population. For now, we can just see which disciplines appear to be represented in the corpus that we have.
+
+Niles tagged the items in Zotero, which is great because it is flexible, but not so great because the tags are unstructured. First we need to sort the tags into two groups: discipline tags and technology tags.
+
+```{r}
+#| output: false
+# Get list of tags for categorisation
+corpus |>
+  tidyr::unnest(c(tag)) |> 
+  dplyr::distinct(tag) |> 
+  dplyr::mutate(tag_category = "") |> 
+  readr::write_csv("all-tags.csv")
+
+# Import categorised tags
+tag_categories <- readr::read_csv("all-tags-categorised.csv")
+```
+
+Once we have (very roughly) categorised the tags, we can take a look at the summary statistics. @fig-disciplines shows the disciplines represented in the corpus. The corpus already suggests new lines of inquiry. The social science disciplines are not so surprising, but it is intriguing to note the presence of many Visual Arts and Musiology articles. These disciplines do not feature heavily in the mainstream historiography of Digital Humanities, which has tended to focus on early efforts in literature and linguistics.
+
+```{r}
+#| label: fig-disciplines
+#| fig-cap: Musicology and Visual Arts have probably been overlooked in the early history of CHS. Disciplines with only one article excluded.
+disciplines <- corpus |> 
+  tidyr::unnest(c(tag)) |> 
+  dplyr::left_join(tag_categories, by="tag") |> 
+  dplyr::filter(tag_category == "discipline", !is.na(tag)) |> 
+  dplyr::group_by(tag) |> 
+  dplyr::filter(dplyr::n() > 1)
+
+disciplines |> 
+  ggplot2::ggplot(ggplot2::aes(y=tag)) +
+  ggplot2::geom_bar() +
+  ggplot2::labs(
+    y = "Discipline",
+    x = glue::glue("Number of Articles (n = {nrow(disciplines)}).")
+  )
+```
+
+## What computers were in use?
+
+```{r}
+computers <- corpus |> 
+  tidyr::unnest(c(tag)) |> 
+  dplyr::left_join(tag_categories, by="tag") |> 
+  dplyr::filter(tag_category == "computer", !is.na(tag))
+```
+
+The computer tags also paint an intriguing picture of the early period of CHS. `r length(unique(computers$tag))` distinct models of computer are mentioned in the corpus—we may find more as we dig deeper. Although there are many models in the corpus, a few big brands or lines of computer dominate, as shown in @fig-computers. 
+
+```{r}
+computers |> 
+  dplyr::select(tag) |> 
+  dplyr::mutate(
+    tag = stringr::str_remove(tag, "Computer: "),
+    brand = stringr::str_extract(tag, "\\w+")
+  ) |> 
+  ggplot2::ggplot(ggplot2::aes(y=brand)) +
+  ggplot2::geom_bar() +
+  ggplot2::labs(
+    y = "Brand",
+    x = glue::glue("Models Mentioned (n = {nrow(computers)} mentions in {length(unique(computers$Key))} articles)")
+  )
+```
+
+@fig-computers will be unsurprisng to readers familiar with the history of computers. IBM was the dominant manufacturer of large computers in this period. By the mid-sixties, mini-computers were becoming more popular, two of the most famous brands being [Control Data Corporation](https://en.wikipedia.org/wiki/Control_Data_Corporation) (CDC) and [Digital Equipment Corporation](https://en.wikipedia.org/wiki/Digital_Equipment_Corporation) (who manufactured the [PDP line of computers](https://en.wikipedia.org/wiki/Programmed_Data_Processor)). The [Illiac](https://en.wikipedia.org/wiki/ILLIAC) computers present a fascinating case of early use of computation in the Human Sciences. As well as a statistical machine, it was a machine for musical composition, and was used to create the *Illiac Suite* [@hiller_computer_1964]. You can listen to part of the suite on Spotify:
+
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6ikV7mM1mwzFDrhmK4bNxE?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+## Where to from here?
+
+Next, we need to tidy up the corpus a bit, and get the text of the articles into R. Then we can get to the meat of the *homo calculans* project—the *discourse* of Computational Human Sciences in the 1950s and 60s. What did these early pioneers think they were doing? How did they justify there strange experiments in computational method? I am excited to find out...
+
+*Image credit: Alice (Betsy) E. D. Gillies and Donald B. Gillies with the ILLIAC I at the Digital Computer Lab, Urbana Illinois, circa 1958. By SystemBuilder. [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), [permalink](https://commons.wikimedia.org/w/index.php?curid=93330530)*

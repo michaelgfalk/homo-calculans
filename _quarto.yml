@@ -14,7 +14,7 @@ resources:
 format:
   html:
     theme:
-      - vapor
+      - minty
       - custom.scss
     css: styles.css
 
