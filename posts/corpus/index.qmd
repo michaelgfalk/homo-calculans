@@ -103,6 +103,8 @@ computers <- corpus |>
 The computer tags also paint an intriguing picture of the early period of CHS. `r length(unique(computers$tag))` distinct models of computer are mentioned in the corpus—we may find more as we dig deeper. Although there are many models in the corpus, a few big brands or lines of computer dominate, as shown in @fig-computers. 
 
 ```{r}
+#| label: fig-computers
+#| fig-cap: Unsurprisingly, IBM dominated the early days of CHS.
 computers |> 
   dplyr::select(tag) |> 
   dplyr::mutate(
