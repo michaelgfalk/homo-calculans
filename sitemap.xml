@@ -2,14 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://homo-calculans.blog/posts/initial/index.html</loc>
-    <lastmod>2024-12-20T05:30:37.170Z</lastmod>
-  </url>
-  <url>
-    <loc>https://homo-calculans.blog/about.html</loc>
-    <lastmod>2024-12-20T05:30:37.170Z</lastmod>
+    <lastmod>2025-08-05T06:44:29.345Z</lastmod>
   </url>
   <url>
     <loc>https://homo-calculans.blog/index.html</loc>
-    <lastmod>2024-12-20T05:30:37.170Z</lastmod>
+    <lastmod>2025-08-05T06:44:29.342Z</lastmod>
+  </url>
+  <url>
+    <loc>https://homo-calculans.blog/about.html</loc>
+    <lastmod>2025-08-05T06:44:29.340Z</lastmod>
+  </url>
+  <url>
+    <loc>https://homo-calculans.blog/posts/corpus/index.html</loc>
+    <lastmod>2025-08-05T06:44:29.345Z</lastmod>
   </url>
 </urlset>
