@@ -461,7 +461,7 @@ background-color: null;
 font-style: inherit;">is.na</span>(tag))</span></code></pre></div>
 </details>
 </div>
-<p>The computer tags also paint an intriguing picture of the early period of CHS. 74 distinct models of computer are mentioned in the corpus—we may find more as we dig deeper. Although there are many models in the corpus, a few big brands or lines of computer dominate, as shown in <strong>?@fig-computers</strong>.</p>
+<p>The computer tags also paint an intriguing picture of the early period of CHS. 74 distinct models of computer are mentioned in the corpus—we may find more as we dig deeper. Although there are many models in the corpus, a few big brands or lines of computer dominate, as shown in Figure&nbsp;3.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -547,14 +547,19 @@ font-style: inherit;">"Models Mentioned (n = {nrow(computers)} mentions in {leng
 <span id="cb6-12">  )</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://homo-calculans.blog/posts/corpus/index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-computers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-computers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://homo-calculans.blog/posts/corpus/index_files/figure-html/fig-computers-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-computers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Unsurprisingly, IBM dominated the early days of CHS.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p><strong>?@fig-computers</strong> will be unsurprisng to readers familiar with the history of computers. IBM was the dominant manufacturer of large computers in this period. By the mid-sixties, mini-computers were becoming more popular, two of the most famous brands being <a href="https://en.wikipedia.org/wiki/Control_Data_Corporation">Control Data Corporation</a> (CDC) and <a href="https://en.wikipedia.org/wiki/Digital_Equipment_Corporation">Digital Equipment Corporation</a> (who manufactured the <a href="https://en.wikipedia.org/wiki/Programmed_Data_Processor">PDP line of computers</a>). The <a href="https://en.wikipedia.org/wiki/ILLIAC">Illiac</a> computers present a fascinating case of early use of computation in the Human Sciences. As well as a statistical machine, it was a machine for musical composition, and was used to create the <em>Illiac Suite</em> <span class="citation" data-cites="hiller_computer_1964">(Hiller and Baker 1964)</span>. You can listen to part of the suite on Spotify:</p>
+<p>Figure&nbsp;3 will be unsurprisng to readers familiar with the history of computers. IBM was the dominant manufacturer of large computers in this period. By the mid-sixties, mini-computers were becoming more popular, two of the most famous brands being <a href="https://en.wikipedia.org/wiki/Control_Data_Corporation">Control Data Corporation</a> (CDC) and <a href="https://en.wikipedia.org/wiki/Digital_Equipment_Corporation">Digital Equipment Corporation</a> (who manufactured the <a href="https://en.wikipedia.org/wiki/Programmed_Data_Processor">PDP line of computers</a>). The <a href="https://en.wikipedia.org/wiki/ILLIAC">Illiac</a> computers present a fascinating case of early use of computation in the Human Sciences. As well as a statistical machine, it was a machine for musical composition, and was used to create the <em>Illiac Suite</em> <span class="citation" data-cites="hiller_computer_1964">(Hiller and Baker 1964)</span>. You can listen to part of the suite on Spotify:</p>
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6ikV7mM1mwzFDrhmK4bNxE?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
 </iframe>
 </section>
