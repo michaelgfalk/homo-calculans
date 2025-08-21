@@ -1,0 +1,54 @@
+---
+title: "Workshop: Madness in Method"
+editor: source
+---
+
+Computation is more than a tool—it is a way of thinking. Or is it? Join us for a short-day workshop to meet digital researchers across the HASS disciplines, to critique the concepts of ‘digital’ and ‘method’, and to establish a set of principles for the adoption of digital methods. The workshop features provocative keynotes, an interactive data session, lightning talks, structured interaction and will culminate in the collective authorship of 10 Theses on Method.
+
+**Where:** The Digital Lab, Arts West, University of Melbourne
+
+**When:** 10AM-4PM
+
+[Register via Humanitix](https://events.humanitix.com/madness-in-method)
+
+## Programme
+
+### 10:00 | Welcome to the Past
+
+Michael Falk and Niles Zhao introduce the project, and provide an historical overview of digital methods in the Humanities and Social Sciences, using the project corpus.
+
+### 10:45 | Meet the Method
+
+'Speed dating' activity, to discover the mad methods of other workshop attendees. Structured. Fun. Totally professional.
+
+### 11:30 | Method and Materiality
+
+[Kath Bode](https://researchportalplus.anu.edu.au/en/persons/katherine-bode) (ANU) presents her critical study of the materiality of digital methods.
+
+### 12:30 | Lunch
+
+### 01:30 | Lightning Talks
+
+Presenters have 7 minutes + 1 slide to present a digital method, and explain how it has impacted their discipline.
+
+[Philip Pond](https://findanexpert.unimelb.edu.au/profile/858659-philip-pond) (Media Studies / TBC)
+
+[Jasmin Pfefferkorn](https://jasminpfefferkorn.com/about) (Museum Studies / Digital Walkthrough)
+
+[Finn Morgan](https://www.fiannualamorgan.com/cv) (Literary Studies / Heuristics)
+
+[Mitch Goodwin](https://lobster-celery-ghdj.squarespace.com/home) (Art / Style Parameters)
+
+[Kim Doyle](https://findanexpert.unimelb.edu.au/profile/637022-kim-doyle) (TBC / TBC)
+
+[Nat Cutter](https://natcutter.com/) (AI / History)
+
+### 02:30 | Mapping as Method
+
+[Luca Scholz](https://lucascholz.com/) (Manchester) presents his work in the history of spatial humanities.
+
+### 03:30 | Theses on Method
+
+Collective writing and reflection session.
+
+### 04:00 | Goodbye!

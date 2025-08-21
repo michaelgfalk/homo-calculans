@@ -8,6 +8,8 @@ website:
       - text: "Blog"
         href: index.qmd
       - about.qmd
+      - text: "Workshop"
+        href: workshop.qmd
   site-url: "https://homo-calculans.blog"
 resources:
     - "assets/*"
