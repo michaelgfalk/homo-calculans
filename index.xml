@@ -10,7 +10,7 @@
 <atom:link href="https://homo-calculans.blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.7.32</generator>
-<lastBuildDate>Tue, 05 Aug 2025 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 04 Aug 2025 14:00:00 GMT</lastBuildDate>
 <item>
   <title>The homo calculans corpus</title>
   <dc:creator>Michael Falk</dc:creator>
@@ -578,7 +578,7 @@ Hiller, Lejaren A., and Robert A. Baker. 1964. <span>“Computer <span>Cantata</
 </div>
 </div></section></div> ]]></description>
   <guid>https://homo-calculans.blog/posts/corpus/</guid>
-  <pubDate>Tue, 05 Aug 2025 00:00:00 GMT</pubDate>
+  <pubDate>Mon, 04 Aug 2025 14:00:00 GMT</pubDate>
   <media:content url="https://homo-calculans.blog/assets/img/illiac.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -600,7 +600,7 @@ Hiller, Lejaren A., and Robert A. Baker. 1964. <span>“Computer <span>Cantata</
 
  ]]></description>
   <guid>https://homo-calculans.blog/posts/initial/</guid>
-  <pubDate>Fri, 20 Dec 2024 00:00:00 GMT</pubDate>
+  <pubDate>Thu, 19 Dec 2024 13:00:00 GMT</pubDate>
   <media:content url="https://homo-calculans.blog/assets/img/Coding_01.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
