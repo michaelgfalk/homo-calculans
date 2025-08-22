@@ -4,6 +4,10 @@ editor: source
 bibliography: workshop.bib
 ---
 
+> [Hamlet]{.smallcaps}\
+I am but mad north-north-west: when the wind is\
+southerly I know a hawk from a handsaw.
+
 Computation is more than a tool—it is a way of thinking. Or is it? Join us for a short-day workshop to meet digital researchers across the HASS disciplines, to critique the concepts of ‘digital’ and ‘method’, and to establish a set of principles for the adoption of digital methods. The workshop features provocative keynotes, an interactive data session, lightning talks, structured interaction and will culminate in the collective authorship of 10 Theses on Method.
 
 **Where:** The Digital Lab, Arts West, University of Melbourne
@@ -46,7 +50,7 @@ Presenters have 7 minutes + 1 slide to present a digital method, and explain how
 
 [Mitch Goodwin](https://lobster-celery-ghdj.squarespace.com/home) (Art / Style Parameters)
 
-[Kim Doyle](https://findanexpert.unimelb.edu.au/profile/637022-kim-doyle) (TBC / TBC)
+[Kim Doyle](https://findanexpert.unimelb.edu.au/profile/637022-kim-doyle) (Finance Studies / AI)
 
 [Nat Cutter](https://natcutter.com/) (History / LLMs)
 
