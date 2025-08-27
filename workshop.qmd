@@ -4,10 +4,6 @@ editor: source
 bibliography: workshop.bib
 ---
 
-> [Hamlet]{.smallcaps}\
-I am but mad north-north-west: when the wind is\
-southerly I know a hawk from a handsaw.
-
 Computation is more than a tool—it is a way of thinking. Or is it? Join us for a short-day workshop to meet digital researchers across the HASS disciplines, to critique the concepts of ‘digital’ and ‘method’, and to establish a set of principles for the adoption of digital methods. The workshop features provocative keynotes, an interactive data session, lightning talks, structured interaction and will culminate in the collective authorship of 10 Theses on Method.
 
 **Where:** The Digital Lab, Arts West, University of Melbourne
@@ -16,9 +12,15 @@ Computation is more than a tool—it is a way of thinking. Or is it? Join us for
 
 [Register via Humanitix](https://events.humanitix.com/madness-in-method)
 
-What makes methods 'mad'? In the Humanities and Social Sciences, 'method' has traditionally been seen as a tool of objectivity, which became an aim in humanistic research only the nineteenth century [@daston_objectivity_2014]. A method is a recipe, which always cooks the same cake. If the same cake comes out every time, no matter the cook, then surely we can all agree that the cake is an object rather than an expression of the cooking subject? Some Humanists and Social Scientists have embraced methodical objectivity, especially as computation has enabled more complex and sophisticated methods in all branches of research. Others have rejected methodical objectivity as an improper encroachment of positivism into humanistic learning.
+## Methods and Madness
 
-This workshop offers a third approach, inspired by the 'counter-methods' of Paul @feyerabend_against_1975, the 'assemblage methods' of John @law_after_2004, the 'pataphysical' methods of Stephen @ramsay_reading_2011, the 'interface methods' of Noortje Marres and Carolin Geerlitz [-@marres_interface_2016], and the creative works of algorithmic artists from Laurie Spiegel to Refik Anadol. Sure, methods might create objects—but do they always have to create the same, sane ones? How might digital methods help us to reimagine or reshape the world?
+> [Hamlet]{.smallcaps}\
+I am but mad north-north-west: when the wind is\
+southerly I know a hawk from a handsaw.
+
+What makes methods 'mad'? In the Humanities and Social Sciences, 'method' has usually been a bulwark of sanity. Methods ensure that objects exist. When scholars use the proper methods, they can ensure that their research is 'objective', a key epistemic virtue in the Humanities since the 1800s [@daston_objectivity_2014]. Methods achieve objectivity in the same way recipes achieve dishes. A good recipe always cooks the same cake, no matter the cook. Since the cake doesn't depend on the cook, we can agree that the cake is an independent object, that does not rely on the intervention of a particular human subject. Like recipes, research methods guarantee the independence of the objects of research. Some Humanists and Social Scientists have embraced methodical objectivity, especially as computation has enabled more complex and sophisticated methods in all branches of research. Others have rejected methodical objectivity as an improper encroachment of positivism into humanistic learning.
+
+This workshop offers a third approach, inspired by the 'counter-methods' of Paul @feyerabend_against_1975, the 'assemblage methods' of John @law_after_2004, the 'pataphysical' methods of Stephen @ramsay_reading_2011, the 'interface methods' of Noortje Marres and Carolin Geerlitz [-@marres_interface_2016], and the creative works of algorithmic artists from Laurie Spiegel to Refik Anadol. Sure, methods might create objects—but do they always have to create the same, sane ones? How might digital methods help us to reimagine, reshape or recreate the world?
 
 ## Programme
 
