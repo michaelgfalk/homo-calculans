@@ -26,11 +26,22 @@ This workshop offers a third approach, inspired by the 'counter-methods' of Paul
 
 ### 10:00 | Welcome to the Past
 
-Michael Falk and Niles Zhao introduce the project, and provide an historical overview of digital methods in the Humanities and Social Sciences, using the project corpus.
+[Michael Falk](https://michaelfalk.io) and Niles Zhao introduce the project, and provide an historical overview of digital methods in the Humanities and Social Sciences, using the project corpus.
 
 ### 10:45 | Meet the Method
 
 'Speed dating' activity, to discover the mad methods of other workshop attendees. Structured. Fun. Totally professional.
+
+| Round | Discussion Prompt |
+|-------|----------------------|
+| 1 | What makes a method ‘digital’? Are there any methods you aren’t sure about? |
+| 2 | Does the qualitative/quantitative distinction apply to digital methods in your work or discipline? Why or why not? |
+| 3 | What is the biggest impact digital methods have had on your respective disciplines? |
+| 4 | Are Digital Humanities/Social Sciences necessarily positivist or empirical? If so, or if not, is this a problem? |
+| 5 | Is it necessary to be interdisciplinary to use digital methods? |
+| 6 | What are the ethical implications of using digital methods today? |
+
+If you don't use specific 'digital methods' in your work, you can think about the digital mediation of your (non)-digital methods. For example, using databases for literature search or to view archival materials.
 
 ### 11:30 | Method and Materiality
 
@@ -44,15 +55,13 @@ Michael Falk and Niles Zhao introduce the project, and provide an historical ove
 
 Presenters have 7 minutes + 1 slide to present a digital method, and explain how it has impacted their discipline.
 
-[Philip Pond](https://findanexpert.unimelb.edu.au/profile/858659-philip-pond) (Media Studies / TBC)
+[Philip Pond](https://findanexpert.unimelb.edu.au/profile/858659-philip-pond) (Media Studies / Non-time Series)
 
 [Jasmin Pfefferkorn](https://jasminpfefferkorn.com/about) (Museum Studies / Digital Walkthrough)
 
 [Finn Morgan](https://www.fiannualamorgan.com/cv) (Literary Studies / Heuristics)
 
 [Mitch Goodwin](https://lobster-celery-ghdj.squarespace.com/home) (Art / Style Parameters)
-
-[Kim Doyle](https://findanexpert.unimelb.edu.au/profile/637022-kim-doyle) (Finance Studies / AI)
 
 [Nat Cutter](https://natcutter.com/) (History / LLMs)
 
