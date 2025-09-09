@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://homo-calculans.blog/index.html</loc>
-    <lastmod>2025-09-08T04:55:22.278Z</lastmod>
+    <loc>https://homo-calculans.blog/about.html</loc>
+    <lastmod>2024-12-20T05:05:22.156Z</lastmod>
   </url>
   <url>
     <loc>https://homo-calculans.blog/workshop.html</loc>
-    <lastmod>2025-09-08T04:55:22.281Z</lastmod>
-  </url>
-  <url>
-    <loc>https://homo-calculans.blog/posts/corpus/index.html</loc>
-    <lastmod>2025-09-08T04:55:22.281Z</lastmod>
+    <lastmod>2025-09-09T02:36:12.551Z</lastmod>
   </url>
   <url>
     <loc>https://homo-calculans.blog/posts/initial/index.html</loc>
-    <lastmod>2025-09-08T04:55:22.281Z</lastmod>
+    <lastmod>2024-12-20T05:05:22.158Z</lastmod>
   </url>
   <url>
-    <loc>https://homo-calculans.blog/about.html</loc>
-    <lastmod>2025-09-08T04:55:22.276Z</lastmod>
+    <loc>https://homo-calculans.blog/posts/corpus/index.html</loc>
+    <lastmod>2025-08-05T10:12:50.764Z</lastmod>
+  </url>
+  <url>
+    <loc>https://homo-calculans.blog/index.html</loc>
+    <lastmod>2024-12-20T05:20:00.444Z</lastmod>
   </url>
 </urlset>
