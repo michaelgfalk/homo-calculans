@@ -12,7 +12,7 @@ Computation is more than a tool—it is a way of thinking. Or is it? Join us for
 
 [Register via Humanitix](https://events.humanitix.com/madness-in-method)
 
-The Digital Lab can be hard to find. Someone will be waiting at the main entrace of Arts West from 9:45 to help you find it. The link above can also generate directions for you.
+The Digital Lab can be hard to find. Someone will be waiting at the main entrance of Arts West from 9:45 to help you find it. The link above can also generate directions for you.
 
 ## Methods and Madness
 
@@ -49,6 +49,8 @@ If you don't use specific 'digital methods' in your work, you can think about th
 
 [Kath Bode](https://researchportalplus.anu.edu.au/en/persons/katherine-bode) (ANU) presents her critical study of the materiality of digital methods.
 
+Kath is Professor of Literary and Textual Studies at the Australian National University. She is the author of two pathbreaking books in Computational Literary Studies: [*Reading By Numbers*](https://anthempress.com/books/reading-by-numbers-pb) (2012) and [*A World of Fiction: Digital Collections and the Future of Literary History*](https://press.umich.edu/Books/A/A-World-of-Fiction) (2018). Kath has made her name as a powerful critic of so-called "distant reading," but unlike other critics of this trend in scholarship, Kath has launched her critique from within digital humanities. She proposes a unique approach the digital text, rooted in the classic techniques of textual scholarship. In this talk, Kath will give us a sneak peek of her next book, provisionally entitled *Computing Literature*, which draws on her ARC Future Fellowship, *Reading at the interface: literatures, cultures, technologies*.
+
 ### 12:30 | Lunch
 
 *Uncatered, sorry!*
@@ -71,9 +73,11 @@ Presenters have 7 minutes + 1 slide to present a digital method, and explain how
 
 [Luca Scholz](https://lucascholz.com/) (Manchester) presents his work in the history of spatial humanities.
 
+Luca is a historian and digital humanist, and is Senior Lecturer in the Centre for Digital Humanities, Culture and Media at the University of Manchester. He specialises in the spatial humanities. He is at once an expert in the history of mapping, and in the application of new kinds of digital mapping to history. He is the author of [*Borders and Freedom of Movement in the Holy Roman Empire*](https://global.oup.com/academic/product/borders-and-freedom-of-movement-in-the-holy-roman-empire-9780198845676?cc=it&lang=en), published with OUP in 2020, and is currently working on his second book, a digital history of the amusing European practice of "weather-shooting." Using the techniques of spatial humanities, Luca is mapping the spread of this bizarre and endearing practice from the 1600s to the 1900s. Today he will talk to us about the kinds of spatial methods he uses, and how they can enlighten the historian.
+
 ### 03:30 | Theses on Method
 
-Collective writing and reflection session.
+Collective writing and reflection session. Can we distil today's discussion into 5, 10 or 15 [theses on method](https://docs.google.com/document/d/1Mb6UM5pEuAqTtK16S9wx9_rDtihlY3qmx36fMwa-o90/edit?tab=t.0)?
 
 ### 04:00 | Goodbye!
 
