@@ -9,8 +9,16 @@
 <link>https://homo-calculans.blog/</link>
 <atom:link href="https://homo-calculans.blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.7.33</generator>
-<lastBuildDate>Mon, 04 Aug 2025 14:00:00 GMT</lastBuildDate>
+<generator>quarto-1.8.26</generator>
+<lastBuildDate>Wed, 03 Dec 2025 13:00:00 GMT</lastBuildDate>
+<item>
+  <title></title>
+  <link>https://homo-calculans.blog/posts/dha25/</link>
+  <description><![CDATA[ undefined ]]></description>
+  <guid>https://homo-calculans.blog/posts/dha25/</guid>
+  <pubDate>Wed, 03 Dec 2025 13:00:00 GMT</pubDate>
+  <media:content url="https://homo-calculans.blog/assets/img/dha25-presentation-img.png" medium="image" type="image/png" height="72" width="144"/>
+</item>
 <item>
   <title>The homo calculans corpus</title>
   <dc:creator>Michael Falk</dc:creator>
@@ -30,7 +38,7 @@
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">corpus <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">corpus <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> readr<span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -127,7 +135,7 @@ font-style: inherit;">`</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">length</span>()</span></code></pre></div>
+font-style: inherit;">length</span>()</span></code></pre></div></div>
 </details>
 </div>
 </section>
@@ -137,7 +145,7 @@ font-style: inherit;">length</span>()</span></code></pre></div>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">corpus <span class="sc" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">corpus <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span> </span>
 <span id="cb2-2">  ggplot2<span class="sc" style="color: #5E5E5E;
@@ -215,7 +223,7 @@ background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Report"</span></span>
-<span id="cb2-11">  ))</span></code></pre></div>
+<span id="cb2-11">  ))</span></code></pre></div></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-item-type-hist" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -238,7 +246,7 @@ Figure&nbsp;1: The items in the corpus are mostly journal articles, as expected.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Get list of tags for categorisation</span></span>
 <span id="cb3-2">corpus <span class="sc" style="color: #5E5E5E;
@@ -290,14 +298,14 @@ font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">read_csv</span>(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"all-tags-categorised.csv"</span>)</span></code></pre></div>
+font-style: inherit;">"all-tags-categorised.csv"</span>)</span></code></pre></div></div>
 </details>
 </div>
 <p>Once we have (very roughly) categorised the tags, we can take a look at the summary statistics. Figure&nbsp;2 shows the disciplines represented in the corpus. The corpus already suggests new lines of inquiry. The social science disciplines are not so surprising, but it is intriguing to note the presence of many Visual Arts and Musiology articles. These disciplines do not feature heavily in the mainstream historiography of Digital Humanities, which has tended to focus on early efforts in literature and linguistics.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">disciplines <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">disciplines <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> corpus <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -400,7 +408,7 @@ background-color: null;
 font-style: inherit;">glue</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Number of Articles (n = {nrow(disciplines)})."</span>)</span>
-<span id="cb4-14">  )</span></code></pre></div>
+<span id="cb4-14">  )</span></code></pre></div></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-disciplines" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -421,7 +429,7 @@ Figure&nbsp;2: Musicology and Visual Arts have probably been overlooked in the e
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">computers <span class="ot" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">computers <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> corpus <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -458,14 +466,14 @@ font-style: inherit;">"computer"</span>, <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">!</span><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">is.na</span>(tag))</span></code></pre></div>
+font-style: inherit;">is.na</span>(tag))</span></code></pre></div></div>
 </details>
 </div>
 <p>The computer tags also paint an intriguing picture of the early period of CHS. 74 distinct models of computer are mentioned in the corpus—we may find more as we dig deeper. Although there are many models in the corpus, a few big brands or lines of computer dominate, as shown in Figure&nbsp;3.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">computers <span class="sc" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">computers <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span> </span>
 <span id="cb6-2">  dplyr<span class="sc" style="color: #5E5E5E;
@@ -544,7 +552,7 @@ background-color: null;
 font-style: inherit;">glue</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Models Mentioned (n = {nrow(computers)} mentions in {length(unique(computers$Key))} articles)"</span>)</span>
-<span id="cb6-12">  )</span></code></pre></div>
+<span id="cb6-12">  )</span></code></pre></div></div>
 </details>
 <div class="cell-output-display">
 <div id="fig-computers" class="quarto-float quarto-figure quarto-figure-center anchored">

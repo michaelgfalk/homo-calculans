@@ -28,13 +28,6 @@
     "text": "Programme\n\n10:00 | Welcome to the Past\nMichael Falk and Niles Zhao introduce the project, and provide an historical overview of digital methods in the Humanities and Social Sciences, using the project corpus.\n\n\n10:45 | Meet the Method\n‘Speed dating’ activity, to discover the mad methods of other workshop attendees. Structured. Fun. Totally professional.\n\n\n\n\n\n\n\nRound\nDiscussion Prompt\n\n\n\n\n1\nWhat makes a method ‘digital’? Are there any methods you aren’t sure about?\n\n\n2\nDoes the qualitative/quantitative distinction apply to digital methods in your work or discipline? Why or why not?\n\n\n3\nWhat is the biggest impact digital methods have had on your respective disciplines?\n\n\n4\nAre Digital Humanities/Social Sciences necessarily positivist or empirical? If so, or if not, is this a problem?\n\n\n5\nIs it necessary to be interdisciplinary to use digital methods?\n\n\n6\nWhat are the ethical implications of using digital methods today?\n\n\n\nIf you don’t use specific ‘digital methods’ in your work, you can think about the digital mediation of your (non)-digital methods. For example, using databases for literature search or to view archival materials.\n\n\n11:30 | Method and Materiality\nKath Bode (ANU) presents her critical study of the materiality of digital methods.\nKath is Professor of Literary and Textual Studies at the Australian National University. She is the author of two pathbreaking books in Computational Literary Studies: Reading By Numbers (2012) and A World of Fiction: Digital Collections and the Future of Literary History (2018). Kath has made her name as a powerful critic of so-called “distant reading,” but unlike other critics of this trend in scholarship, Kath has launched her critique from within digital humanities. She proposes a unique approach the digital text, rooted in the classic techniques of textual scholarship. In this talk, Kath will give us a sneak peek of her next book, provisionally entitled Computing Literature, which draws on her ARC Future Fellowship, Reading at the interface: literatures, cultures, technologies.\n\n\n12:30 | Lunch\nUncatered, sorry!\n\n\n01:30 | Lightning Talks\nPresenters have 7 minutes + 1 slide to present a digital method, and explain how it has impacted their discipline.\nPhilip Pond (Media Studies / Non-time Series)\nJasmin Pfefferkorn (Museum Studies / Digital Walkthrough)\nFinn Morgan (Literary Studies / Heuristics)\nMitch Goodwin (Art / Style Parameters)\nNat Cutter (History / LLMs)\n\n\n02:30 | Mapping as Method\nLuca Scholz (Manchester) presents his work in the history of spatial humanities.\nLuca is a historian and digital humanist, and is Senior Lecturer in the Centre for Digital Humanities, Culture and Media at the University of Manchester. He specialises in the spatial humanities. He is at once an expert in the history of mapping, and in the application of new kinds of digital mapping to history. He is the author of Borders and Freedom of Movement in the Holy Roman Empire, published with OUP in 2020, and is currently working on his second book, a digital history of the amusing European practice of “weather-shooting.” Using the techniques of spatial humanities, Luca is mapping the spread of this bizarre and endearing practice from the 1600s to the 1900s. Today he will talk to us about the kinds of spatial methods he uses, and how they can enlighten the historian.\n\n\n03:30 | Theses on Method\nCollective writing and reflection session. Can we distil today’s discussion into 5, 10 or 15 theses on method?\n\n\n04:00 | Goodbye!"
   },
   {
-    "objectID": "posts/initial/index.html",
-    "href": "posts/initial/index.html",
-    "title": "Reckoning Humanity",
-    "section": "",
-    "text": "What are the “Human Sciences”? How have they been “computerised”? Both questions have an antique ring. In Australia, where I live and work, no-one calls themself a “human scientist,” except perhaps for the odd biologist or psychologist. And in our “digital” age, terms such as “digitisation,” “digitalisation” or “digital transformation” are far more popular than the old term “computerisation,” which smacks of dusty punch-cards and clunking microcomputers from 1980s schoolrooms.\nAnd yet the question, “how were the human sciences computerised,” is an essential one. Today, computing is more humanistic than ever. The Generative AI revolution has suddenly narrowed the perceived gap between humans and machines. Meanwhile, the growth of surveillance capitalism has made the collection and analysis of human data into a big business and a socio-political nightmare. Now we all have an interest in the question: What can we learn about human beings through the use of computation?\nIn this project, I want to take the question back to the beginning. I want to take it back to the 1950s and 60s, when fast digital computers were brand new, and scholars of humankind were only just getting their hands on them. In those days, the concept of the “computer” was fresh. The metaphors people used to describe computers were live. The arguments people made about the possible applications of computing were wild and often utopian. If we go back to that more creative age, we might be able to reopen that creativity, and address the problems of today.\nThis is a pilot project, that will unfold over the course of 2025. Stay tuned, to learn about how humans were datafied in the early days, and to discover new old ways to harness the power of computation to achieve the age-old goal of the human sciences: a gentler, more philsophical, more enlightened understanding of our plural condition on this fragile earth."
-  },
-  {
     "objectID": "posts/corpus/index.html",
     "href": "posts/corpus/index.html",
     "title": "The homo calculans corpus",
@@ -77,10 +70,136 @@
     "text": "Where to from here?\nNext, we need to tidy up the corpus a bit, and get the text of the articles into R. Then we can get to the meat of the homo calculans project—the discourse of Computational Human Sciences in the 1950s and 60s. What did these early pioneers think they were doing? How did they justify there strange experiments in computational method? I am excited to find out…\nImage credit: Alice (Betsy) E. D. Gillies and Donald B. Gillies with the ILLIAC I at the Digital Computer Lab, Urbana Illinois, circa 1958. By SystemBuilder. CC BY-SA 4.0, permalink"
   },
   {
+    "objectID": "posts/initial/index.html",
+    "href": "posts/initial/index.html",
+    "title": "Reckoning Humanity",
+    "section": "",
+    "text": "What are the “Human Sciences”? How have they been “computerised”? Both questions have an antique ring. In Australia, where I live and work, no-one calls themself a “human scientist,” except perhaps for the odd biologist or psychologist. And in our “digital” age, terms such as “digitisation,” “digitalisation” or “digital transformation” are far more popular than the old term “computerisation,” which smacks of dusty punch-cards and clunking microcomputers from 1980s schoolrooms.\nAnd yet the question, “how were the human sciences computerised,” is an essential one. Today, computing is more humanistic than ever. The Generative AI revolution has suddenly narrowed the perceived gap between humans and machines. Meanwhile, the growth of surveillance capitalism has made the collection and analysis of human data into a big business and a socio-political nightmare. Now we all have an interest in the question: What can we learn about human beings through the use of computation?\nIn this project, I want to take the question back to the beginning. I want to take it back to the 1950s and 60s, when fast digital computers were brand new, and scholars of humankind were only just getting their hands on them. In those days, the concept of the “computer” was fresh. The metaphors people used to describe computers were live. The arguments people made about the possible applications of computing were wild and often utopian. If we go back to that more creative age, we might be able to reopen that creativity, and address the problems of today.\nThis is a pilot project, that will unfold over the course of 2025. Stay tuned, to learn about how humans were datafied in the early days, and to discover new old ways to harness the power of computation to achieve the age-old goal of the human sciences: a gentler, more philsophical, more enlightened understanding of our plural condition on this fragile earth."
+  },
+  {
+    "objectID": "posts/dha25/index.html#digital-hass",
+    "href": "posts/dha25/index.html#digital-hass",
+    "title": "Homo Calculans",
+    "section": "Digital HASS",
+    "text": "Digital HASS"
+  },
+  {
+    "objectID": "posts/dha25/index.html#the-problem-of-meaning",
+    "href": "posts/dha25/index.html#the-problem-of-meaning",
+    "title": "Homo Calculans",
+    "section": "The problem of meaning",
+    "text": "The problem of meaning\nDies alles verändert sich grundlegen, sobald wir in den Kreis des menschlichen Handelns eintreten. Dieses ist, selbst in seinen einfachsten und primitivisten Formen, durch eine Art der ‘Mittelbarkeit’ gekennzeichnet, die der Weise, in der das Tier reagiert, scharf entgegengesetzt ist. […] Diese ‘Vorstellung’ des Künftigen charakterisiert alles menschliche Handeln. Wir müssen ein noch nicht Bestehendes im ‘Bilde’ vor uns hinstellen, um sodann von dieser ‘Möglichkeit’ zur ‘Wirklichkeit’, von der Potenz zum Akt überzugehen. (Cassirer 1980, 26)\n\nThis all changes fundamentally, as soon as we step into the circle of human action. This is, even in its simplest and most primitive forms, known through a kind of ‘mediation’, which is completely opposed to the way in which an animal reacts. […] This ‘representation’ of the future characterises all human action. We necessarily hold a picture before us of what has not yet happened, in order to move from ‘possibility’ to ‘reality’, from power to act."
+  },
+  {
+    "objectID": "posts/dha25/index.html#document-types",
+    "href": "posts/dha25/index.html#document-types",
+    "title": "Homo Calculans",
+    "section": "Document Types",
+    "text": "Document Types\n\n\n\n\nTable 1\n\n\n\n\n\n\nDocument Type\nn\n\n\n\n\njournalArticle\n355\n\n\nbookSection\n122\n\n\nbook\n8\n\n\nconferencePaper\n8\n\n\nmagazineArticle\n2\n\n\nreport\n1\n\n\n\n\n\n\n\n\n\n\nTotal documents: 496"
+  },
+  {
+    "objectID": "posts/dha25/index.html#disciplines-represented",
+    "href": "posts/dha25/index.html#disciplines-represented",
+    "title": "Homo Calculans",
+    "section": "Disciplines Represented",
+    "text": "Disciplines Represented\n\n\n\n\nTable 2: Musicology is surprisingly well represented.\n\n\n\n\n\n\nDiscipline\nn\n\n\n\n\nPsychology\n71\n\n\nBehavioural science\n48\n\n\nLiterary Studies\n46\n\n\nMusicology\n42\n\n\nLinguistics\n35\n\n\nStatistics\n35\n\n\nAnthropology\n29\n\n\nPolitical Science\n27\n\n\nInterdisciplinary\n23\n\n\nHistory\n17\n\n\nVisual Arts\n16\n\n\nSociology\n15\n\n\nHumanities\n11\n\n\nArchaeology\n10\n\n\nEconomics\n10\n\n\nMachine Translation\n10\n\n\nGeography\n9\n\n\nReligious Studies\n9\n\n\nNatural Language Processing\n7\n\n\nManagement Science\n5\n\n\nArt History\n4\n\n\nCliometrics\n4\n\n\nEducation\n4\n\n\nClassics\n3\n\n\nBusiness\n2\n\n\nDemography\n2\n\n\nLibrary Studies\n2\n\n\nHistory\n1\n\n\nAccounting\n1\n\n\nMarketing\n1\n\n\nMuseum\n1\n\n\nOrganizational behavior\n1\n\n\nPerforming Arts\n1\n\n\nPhilosophy\n1\n\n\nSimulation???\n1\n\n\nTaxation\n1\n\n\n\n\n\n\n\n\n\n\n505 discipline tags have been added to the documents (n = 496)."
+  },
+  {
+    "objectID": "posts/dha25/index.html#computers-represented",
+    "href": "posts/dha25/index.html#computers-represented",
+    "title": "Homo Calculans",
+    "section": "Computers Represented",
+    "text": "Computers Represented\n\n\n\n\n\n\n\n\nFigure 1: The graph reflects IBM’s market dominance and early sponsorship of Humanities Computing.\n\n\n\n\n\n\n\n255 articles have computer tags. 385 distinct computers have been identified in the corpus."
+  },
+  {
+    "objectID": "posts/dha25/index.html#the-rise-of-minicomputers",
+    "href": "posts/dha25/index.html#the-rise-of-minicomputers",
+    "title": "Homo Calculans",
+    "section": "The rise of minicomputers",
+    "text": "The rise of minicomputers\n\n\nFigure 2: Mainframes dominate the research in this corpus (IBM, Univac), but minicomputers start to become visible near the end."
+  },
+  {
+    "objectID": "posts/dha25/index.html#the-computer-and-the-clerk-metaphorically-1",
+    "href": "posts/dha25/index.html#the-computer-and-the-clerk-metaphorically-1",
+    "title": "Homo Calculans",
+    "section": "The computer and the clerk: metaphorically (1)",
+    "text": "The computer and the clerk: metaphorically (1)\nAs you know by now, if you have been following these lectures, computers are not giant brains at all; they are giant clerks. (Green 1961, 227)"
+  },
+  {
+    "objectID": "posts/dha25/index.html#the-computer-and-the-clerk-metaphorically-2",
+    "href": "posts/dha25/index.html#the-computer-and-the-clerk-metaphorically-2",
+    "title": "Homo Calculans",
+    "section": "The computer and the clerk: metaphorically (2)",
+    "text": "The computer and the clerk: metaphorically (2)\nBecause the use of electronic computers has been regarded with skepticism, we should say quite clearly here that we regard a computer as a clerk with several virtues but one which is no better than its instructions. To appreciate the way in which this clerk operates, one should realize that a computer is, in principle, nothing more than a desk calculator and a note pad. (Gilbert and Hammel 1966, 71)"
+  },
+  {
+    "objectID": "posts/dha25/index.html#the-computer-and-the-clerk-metaphorically-3",
+    "href": "posts/dha25/index.html#the-computer-and-the-clerk-metaphorically-3",
+    "title": "Homo Calculans",
+    "section": "The computer and the clerk: metaphorically (3)",
+    "text": "The computer and the clerk: metaphorically (3)\nIt is useful to liken the Inquirer to an energetic, compulsive, but stupid clerk who has been trained in content analysis mechanics. This clerk has no ideas of his own but waits for the specification of categories and scoring procedures supplied by the investigator. Once these instructions are received and not found to be self-contradictory, the clerk is able to apply them systematically to endless amounts of data. (Stone et al. 1966, 68)"
+  },
+  {
+    "objectID": "posts/dha25/index.html#the-computer-and-the-clerk-literally-1",
+    "href": "posts/dha25/index.html#the-computer-and-the-clerk-literally-1",
+    "title": "Homo Calculans",
+    "section": "The computer and the clerk: literally (1)",
+    "text": "The computer and the clerk: literally (1)\nWe are still not thinking of the computer as anything but a myriad of clerks or assistants in one convenient console. Most of the results I have just described could have been accomplished with the available means of half a century ago. We do not yet understand the true nature of the computer. And we have not yet begun to think in ways appropriate to the nature of this machine.(Milic 1966, 4)"
+  },
+  {
+    "objectID": "posts/dha25/index.html#the-computer-and-the-clerk-literally-2",
+    "href": "posts/dha25/index.html#the-computer-and-the-clerk-literally-2",
+    "title": "Homo Calculans",
+    "section": "The computer and the clerk: literally (2)",
+    "text": "The computer and the clerk: literally (2)\nThis “feedback” process between the anthropologist and the programmer sometimes goes so far as to leave nothing to the former, in the way of interpretation. The computer then takes up not only the clerical drudgery, but also the more “intelligent” functions of problem-solving, in a very broad sense.(Gardin 1965)"
+  },
+  {
+    "objectID": "posts/dha25/index.html#keywords-across-the-disciplines",
+    "href": "posts/dha25/index.html#keywords-across-the-disciplines",
+    "title": "Homo Calculans",
+    "section": "Keywords across the disciplines",
+    "text": "Keywords across the disciplines\n\n\n\n\n\n\n\n\nFigure 3: Frequency for six possible keywords, in disciplines with &gt;10 documents.\n\n\n\n\n\n\n\nThere are 420 documents in this subset; 23 have been assigned to more than one discipline."
+  },
+  {
+    "objectID": "posts/dha25/index.html#distinctive-vocabulary",
+    "href": "posts/dha25/index.html#distinctive-vocabulary",
+    "title": "Homo Calculans",
+    "section": "Distinctive Vocabulary",
+    "text": "Distinctive Vocabulary\n\n\nFigure 4: Most distinctive words by discipline, by tf-idf"
+  },
+  {
+    "objectID": "posts/dha25/index.html#changing-the-object-intervallic",
+    "href": "posts/dha25/index.html#changing-the-object-intervallic",
+    "title": "Homo Calculans",
+    "section": "Changing the object: “intervallic”",
+    "text": "Changing the object: “intervallic”\n\n\n\n\n\n\n\n\nFigure 5: The concept of ‘intervallic’ becomes statistical in the Musicology articles.\n\n\n\n\n\n\n\nHow does the actual object of study change when it is modelled on the computer?"
+  },
+  {
+    "objectID": "posts/dha25/index.html#the-meaning-of-experiment-psychology",
+    "href": "posts/dha25/index.html#the-meaning-of-experiment-psychology",
+    "title": "Homo Calculans",
+    "section": "The meaning of “experiment”: Psychology",
+    "text": "The meaning of “experiment”: Psychology\n\n\nFigure 6: Most highly correlated words with “experiment” and its neighbours, in 200-word chunks from the Psychology articles."
+  },
+  {
+    "objectID": "posts/dha25/index.html#the-meaning-of-experiment-literary-studies",
+    "href": "posts/dha25/index.html#the-meaning-of-experiment-literary-studies",
+    "title": "Homo Calculans",
+    "section": "The meaning of “experiment”: Literary Studies",
+    "text": "The meaning of “experiment”: Literary Studies\n\n\nFigure 7: Most highly correlated words with “experiment” and its neighbours, in 200-word chunks from the Literary Studies articles."
+  },
+  {
+    "objectID": "posts/dha25/index.html#references",
+    "href": "posts/dha25/index.html#references",
+    "title": "Homo Calculans",
+    "section": "References",
+    "text": "References\n\n\n\n\nCassirer, Ernst. 1980. Zur Logik Der Kulturwissenschaften: Fünf Studien. Darmstadt: Wissenschafltiche Buchgesellschaft.\n\n\nGardin, J. C. 1965. “Reconstructing an Economic Network in the Ancient East with the Aid of a Computer.” In The Use of Computers in Anthropology, edited by Dell H. Hymes and Wenner-Gren Foundation For Anthropo, 377–92. Berlin, New York: DE GRUYTER MOUTON. https://doi.org/10.1515/9783111718101.377.\n\n\nGilbert, John P., and E. A. Hammel. 1966. “Computer Simulation and Analysis of Problems in Kinship and Social Structure.” American Anthropologist 68 (1): 71–93. http://www.jstor.org/stable/668063.\n\n\nGreen, Bert F. 1961. “Using Computers to Study Human Perception.” Educational and Psychological Measurement 21 (1): 227–33. https://doi.org/10.1177/001316446102100123.\n\n\nMilic, Louis T. 1966. “The Next Step.” Computers and the Humanities 1 (1): 3–6. https://www.jstor.org/stable/30199191.\n\n\nStone, Philip J., Dexter Dunphy, Daniel M. Ogilvie, and Marshall S. Smith, eds. 1966. The General Inquirer: A Computer Approach to Content Analysis. Cambridge, Mass: M.I.T. Press."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Homo Calculans",
     "section": "",
-    "text": "The homo calculans corpus\n\n\nThe shape of CHS in the 1950s and 60s\n\n\n\n\n\nAug 5, 2025\n\n\nMichael Falk\n\n\n\n\n\n\n\n\n\n\n\n\nReckoning Humanity\n\n\n‘How were the human sciences computerised?’ is a fusty-sounding question. Why ask it?\n\n\n\n\n\nDec 20, 2024\n\n\nMichael Falk\n\n\n\n\n\nNo matching items"
+    "text": "Homo Calculans\n\n\nThe Computerisation of the Human Sciences, 1950s-1960s\n\n\nSlides for our presentation at DHA25\n\n\n\n\n\nDec 4, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nThe homo calculans corpus\n\n\n\n\n\nThe shape of CHS in the 1950s and 60s\n\n\n\n\n\nAug 5, 2025\n\n\nMichael Falk\n\n\n\n\n\n\n\n\n\n\n\n\nReckoning Humanity\n\n\n\n\n\n‘How were the human sciences computerised?’ is a fusty-sounding question. Why ask it?\n\n\n\n\n\nDec 20, 2024\n\n\nMichael Falk\n\n\n\n\n\nNo matching items"
   }
 ]
