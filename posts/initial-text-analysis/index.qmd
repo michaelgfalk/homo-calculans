@@ -1,0 +1,260 @@
+---
+title: Methodological Discourses in the early Computational Human Sciences
+description: Extended abstract for DH26 in South Korea
+authors:
+  - name: Michael Falk
+    affiliation: The University of Melbourne
+    roles: writing, analysis
+    corresponding: true
+    orcid: 0000-0001-9261-8390
+    url: https://michaelfalk.io
+  - name: Niles Zhao
+    affiliation: NTU Singapore
+    roles: writing, data curation
+    orcid: 0000-0003-3537-6342
+    url: https://dr.ntu.edu.sg/entities/person/Niles-Yan-Zhao
+date: 2025-12-15
+image: "/assets/img/ibm-7090.jpg"
+bibliography: homo-calculans-corpus.bib
+execute: 
+  echo: false
+  warning: false
+format:
+  html: default
+  pdf: default
+---
+
+```{r}
+ggplot2::set_theme(ggplot2::theme_bw())
+
+corpus <- file.path("data", "20251117-homo-calculans-corpus.csv") |>
+  readr::read_csv() |> 
+  dplyr::select(
+    id = Key,
+    type = `Item Type`,
+    year = `Publication Year`,
+    author = Author,
+    title = Title,
+    collection = `Publication Title`,
+    tags = `Manual Tags`,
+    pdf = `File Attachments`
+  ) |> 
+  dplyr::mutate(
+    text = purrr::map(pdf, pdftools::pdf_text)
+  ) |> 
+  dplyr::mutate(
+    text = purrr::map_chr(text, \(t) paste0(t, collapse = " "))
+  )
+
+corpus_tags <- corpus |> 
+  # Split tags
+  dplyr::mutate(
+    tags = stringr::str_split(tags, ";")
+  ) |> 
+  tidyr::unnest(tags) |> 
+  dplyr::mutate(
+    tags = stringr::str_trim(tags),
+    tags = stringr::str_split_fixed(tags, ": ", 2),
+    tag_type = tags[,1],
+    tag = tags[,2]
+  ) |> 
+  dplyr::select(-tags) |> 
+  dplyr::filter(
+    tag_type %in% c("Discipline", "Computer", "Program", "Programming Language")
+  )
+
+corpus_words <- corpus |> 
+  tidytext::unnest_tokens(word, text)
+```
+
+
+## Background
+
+The history of Digital Humanities is typically traced back to Humanities Computing, and the seminal research of Fr Roberto Busa SJ [@jones_roberto_2016]. In the *homo calculans* project, we aim to provide a broader, interdisciplinary understanding of the origins of computing in the Humanities, Arts and Social Sciences. Drawing inspiration from studies by @sula_early_2019 and @kleymann_conceptual_2022, we have assembled a corpus of `r nrow(corpus)` pioneering publications in the Computational Humanities, Arts and Social Sciences (HASS) from the 1950s and 60s. We annotate these articles with rich metadata, and subject them to text analysis in order to discover how computing impacted the HASS disciplines in the first two decades of electronic digital computing.
+
+To account for the varied disciplines in the corpus, we situate our analysis in the History of the Human Sciences [@smith_fontana_1997; smith_what_2020]. In the early days of computational research, the community of computational scholars was relatively small, and disciplinary boundaries were porous. A pioneering researcher such as Jean-Claude Gardin could easily make original contributions to both Anthropology [@gardin_typology_1965] and Archaeology [@gardin_reconstructing_1965], drawing on Literary Studies, Sociometry (Social Network Analysis) and Geography for methodological insights. By adopting the "Computational Human Sciences" as our object of study, we have been able to generate both a highly multidisciplinary corpus and a coherent set of research questions.
+
+There is no single accepted definition of the Human Sciences. For the sake of our analysis, we adopt the definition given by Ernst Cassirer in his *Logik der Kulturwisschaften* (1961). In *Logik*, Cassirer identifies "human action" [*menschliches Handeln*] as the common object of what he calls the "Cultural Sciences." The distinctive feature of "human action," according to Cassirer, is its "mediatedness" [*Mittelbarkeit*]. Human actions and artefacts are not simply physical objects, but "forms of expression" [*Ausdrucksformen*], mediated by symbols, which require interpretation [@cassirer_zur_1980, 26, 51]. Broadly speaking, the documents in our corpus fall into Cassirer's definition, because they comprise early attempts to model or analyse human actions using computers, whether these actions are votes, purchases, historical deeds, acts of literary composition, or new pieces of music.
+
+The central problem raised by Cassirer's definition is familiar to researchers in the Digital Humanities today: the problem of meaning [see e.g. @liu_meaning_2013]. How can a dull, cold computer possibly enlighten us about the lively, fleshy meaning of all-to-human acts and symbols? This is a problem for us today, even in the age of lightning-fast personal computers and dazzling AI models. In the 1950s and 60s, researchers in the Human Sciences were faced with large, difficult, inaccessible devices locked away in University Computing Centres, and had to justify their methods to scholarly colleagues who might not even have computer access.
+
+It is in this context that we propose our three research questions:
+
+>**RQ1.** What were the central methods of study across the different disciplines?
+>
+>**RQ2.** How did scholars explain and justify their new methods? What rhetorical or affective devices did they use to obtain acceptance for their results?
+>
+>**RQ3.** How can this history help us understand the breadth of Computational Human Sciences today?
+
+## The Corpus
+
+The corpus for this study includes `r nrow(corpus)` publications published between 1950 and 1969 (@tbl-document-types). The corpus is in the form of a Zotero library, which can be viewed online, though without full-text access for copyright reasons[^group_library_url] While most publications presented original research, the corpus also included reviews and conference reports. All items were written in English as the search was conducted in this language. 
+
+[^group_library_url]: [https://www.zotero.org/groups/5939021/homo-calculans-corpus](https://www.zotero.org/groups/5939021/homo-calculans-corpus)
+
+```{r}
+#| label: tbl-document-types
+#| tbl-caption: Most of the book chapters are in fact conference papers.
+corpus |> 
+  dplyr::group_by(type) |> 
+  dplyr::count() |> 
+  dplyr::arrange(desc(n)) |> 
+  dplyr::rename(`Document Type` = type) |> 
+  knitr::kable()
+```
+
+The corpus was built using purposeful snowball sampling. First, we started with @guetzkow_simulation_1962, tracing both its cited references and subsequent citations within the 1950 to 1969 timeframe. This process yielded 88 sources. Next, we examined the journal *Behavioral Science*, which featured a ‘Computers in Behavioral Science’ section from 1959 to 1967, identifying 112 relevant sources. This concentration likely explains the relative over-representation of behavioural science and psychology within the corpus. We then reviewed the journal *Computers and the Humanities* (1967–1969), locating 73 sources, as well as the 1966 annual bibliography published in 1967, which yielded 67 additional references. We did not proceed beyond 1966 due to the rapidly increasing volume of references. We then included papers from three well-known multi-disciplinary collections of the 1960s, including @bessinger_literary_1964, @hymes_use_1965 and @stone_general_1966. At this point, we observed that several disciplines, such as Religious Studies and History/Cliometrics were under-represented. To complete the search, therefore, we conducted targeted Google Scholar searches using the keywords ‘discipline + computer’, which added 31 sources.
+
+Items in the corpus were systematically tagged for discipline and computer. We determined the disciplines of each text and any computers by reading the abstract and, if necessary, the text. Our approach was inspired by @sula_early_2019, but differs in an important respect. @sula_early_2019 determine the discipline of an article by inspecting the author affiliation. Our approach prioritises how the sources themselves framed disciplinary identity and computational engagement.
+
+High-level statistics on the discipline and computer tags are show in @tbl-discipline-tags and @fig-computers. At the time of writing this abstract, we have not fully normalised the discipline tags, though we intend to do so.
+
+```{r}
+#| label: tbl-discipline-tags
+#| tbl-cap: Musicology is surprisingly well represented.
+discipline_counts <- corpus_tags |> 
+  dplyr::filter(tag_type == "Discipline") |> 
+  dplyr::group_by(tag) |> 
+  dplyr::count() |> 
+  dplyr::arrange(desc(n)) |> 
+  dplyr::rename(Discipline = tag)
+
+discipline_counts|> 
+  knitr::kable()
+```
+
+```{r}
+#| label: fig-computers
+#| fig-cap: "The graph reflects IBM's market dominance and early sponsorship of Humanities Computing."
+corpus_tags |> 
+  dplyr::filter(tag_type == "Computer") |> 
+  dplyr::group_by(tag) |> 
+  dplyr::count() |> 
+  dplyr::ungroup() |> 
+  dplyr::mutate(tag = dplyr::if_else(n == 1, "Other", tag)) |> 
+  dplyr::group_by(tag) |> 
+  dplyr::summarise(n = sum(n)) |> 
+  ggplot2::ggplot(ggplot2::aes(x = tag, y = n)) +
+  ggplot2::geom_col() +
+  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+  ggplot2::labs(x = "Computer")
+```
+
+## The meaning of 'experiment'
+
+```{r}
+#| label: network-analysis-code
+
+compute_word_correlations <- function(tidy_corpus, corpus_tags, chunk_size, discipline) {
+  
+  if (discipline != "any") {
+    disc_corpus <- tidy_corpus |> 
+      dplyr::semi_join(
+      dplyr::filter(corpus_tags, tag_type == "Discipline", tag == discipline),
+      by = "id"
+    )
+  } else {
+    disc_corpus <- tidy_corpus
+  }
+  
+  disc_corpus |> 
+    # Filter unwanted words
+    dplyr::anti_join(tidytext::stop_words, by = "word") |> 
+    dplyr::group_by(word) |> 
+    dplyr::filter(dplyr::n() >= 5) |> 
+    # Chunk the documents, filter small chunks
+    dplyr::group_by(id) |> 
+    dplyr::mutate(
+      chunk = seq_along(word) %/% chunk_size + 1,
+      chunk = stringr::str_c(id, chunk, sep="_")
+    ) |> 
+    dplyr::group_by(chunk, word) |> 
+    dplyr::count() |> 
+    dplyr::group_by(chunk) |> 
+    dplyr::filter(sum(n) > (chunk_size / 2)) |> 
+    widyr::pairwise_cor(word, chunk, n, sort = TRUE)
+}
+
+construct_term_graph <- function(word_cors, terms, order = 2, threshold = .1) {
+  # Filter out weak correlations
+  word_cors <- dplyr::filter(word_cors, correlation >= threshold)
+  
+  # Construct graph
+  cor_graph <- igraph::graph_from_data_frame(word_cors)
+  
+  # Get subgraph on terms of interest
+  term_vertices <- igraph::V(cor_graph)[name %in% terms]
+  neighbour_vertices <- igraph::neighborhood(cor_graph, nodes = term_vertices, order = order)
+  neighbour_ids <- purrr::map(neighbour_vertices, igraph::as_ids) |> purrr::flatten_chr()
+  term_graph <- igraph::subgraph(graph = cor_graph, vids = neighbour_ids)
+  
+  return(term_graph)
+}
+
+visualise_term_graph <- function(term_graph) {
+  term_graph |> ggraph::ggraph(layout = "fr") +
+    ggraph::geom_edge_link(ggplot2::aes(edge_width = correlation), show.legend = FALSE, edge_alpha = 0.1) +
+    ggraph::geom_node_point(colour = "lightblue", size = 5) +
+    ggraph::geom_node_text(ggplot2::aes(label = name), repel = TRUE) +
+    ggplot2::theme(
+      panel.grid.major = ggplot2::element_blank(),
+      panel.grid.minor = ggplot2::element_blank()
+    )
+}
+
+CHUNK_SIZE <- 200
+ORDER <- 2
+THRESHOLD <- 0.35
+```
+
+To understand the range of methods (**RQ1**) and their justification (**RQ2**), we investigate keywords in the corpus using various text-analytic techniques. In this abstract, we show just one of these techniques: lexical network analysis. @fig-psychology-correlations and @fig-literature-correlations show lexical networks for the word "experiment" in the Psychology (n=`r dplyr::filter(discipline_counts, Discipline == 'Psychology') |> dplyr::pull(n)`) and Literary Studies (n=`r dplyr::filter(discipline_counts, Discipline == 'Literary Studies') |> dplyr::pull(n)`) articles in the corpus. To produce these networks, the documents are split into `r CHUNK_SIZE`-word chunks, pairwise correlations are computed between all the words, the data is converted into a graphical format using iGraph, edges are dropped between words if their pairwise correlation is less than `r THRESHOLD`, and then the neighbourhood of order `r ORDER` is shown for the target word (in this case, "experiment"). In a nutshell, the figures show the most closely associated words with the target word, along with the associated words' most associated words.
+
+```{r}
+#| label: fig-psychology-correlations
+#| fig-cap: Most highly correlated words with "experiment" and its neighbours, in 200-word chunks from the Psychology articles.
+psych_cors <- compute_word_correlations(corpus_words, corpus_tags, chunk_size = CHUNK_SIZE, discipline = "Psychology")
+
+construct_term_graph(psych_cors, "experiment", order = ORDER, threshold = THRESHOLD) |> 
+  visualise_term_graph()
+```
+
+```{r}
+#| label: fig-literature-correlations
+#| fig-cap: Most highly correlated words with "experiment" and its neighbours, in 200-word chunks from the Literary Studies articles.
+english_cors <- compute_word_correlations(corpus_words, corpus_tags, chunk_size = 200, discipline = "Literary Studies")
+
+construct_term_graph(english_cors, "experiment", order = ORDER, threshold = THRESHOLD) |> 
+  visualise_term_graph()
+```
+
+As can be seen, the discourse of "experiment" differs markedly in the Psychology and Literary Studies articles. In the Literary Studies articles, the experiment *is the use of computers*. Close associates of the word "experiment" include the names of popular contemporary machines (e.g. the IBM 1401 or 1620), and words describing the concrete process of using the computer (*hours*, *processed*, *verified*, *disk*, *arranged*, etc.). The discourse in Psychology is nothing like this. In the 1950s and 1960s, Psychology was already established as an "experimental" discipline, especially in the United States, where most of our corpus originates. Here the computer is talked about in a more abstract way, as an existing experimental paradigm is *computerized*, perhaps with a corresponding *reduction* of effort.
+
+## The nature of computation
+
+As well as investigating particular methods or methodological concepts, we also investigate the concept "computational" itself. One of the most fruitful lines of inquiry is metaphor:
+
+> As you know by now, if you have been following these lectures, computers are not giant brains at all; they are giant clerks. [@green_using_1961, 227]
+
+```{r}
+clerk_words <- corpus_words |> 
+  dplyr::filter(stringr::str_detect(word, "cler(ic|k)"))
+
+clerk_word_count <- nrow(clerk_words)
+clerk_article_count <- clerk_words |> dplyr::distinct(id) |> nrow()
+```
+
+The words "clerk" or "clerical" (including plurals and other derivations) appear in `r clerk_article_count` articles in the corpus. Close reading of these instances indicates that there was a fluid boundary between metaphorical and literal clerks in the early days of the Computational Human Sciences. Sometimes, a computer would be gradually programmed by a research group to resemble their human clerks, until the human clerks no longer found employment in the research.
+
+Some researchers found this metaphor uninspiring:
+
+> We are still not thinking of the computer as anything but a myriad of clerks or assistants in one convenient console. Most of the results I  have just described could have been accomplished with the available means of half a century ago. We do not yet understand the true nature of the computer. And we have not yet begun to think in ways appropriate to the nature of this machine.[@milic_next_1966, 4]
+
+Researchers in this school tried to push the Computational Human Sciences further into the new field of Artificial Intelligence. Perhaps the computer could think differently, and allow the researcher to pose new questions. One researcher who argued this was was Gardin, who insisted that in the the process of scholar-computer interaction, the computer could gradually move beyond "clerical drudgery," and take over the "'intelligent' functions of problem-solving" normally reserved to the scholar who leads the research team.
+
+The computer-as-clerk was one solution to the problem of meaning. In this metaphor, the computer merely automated non-scholarly tasks hitherto undertaken by clerical staff, rather than by the scholar her- or himself. This metaphor vividly evokes the social, moral and cultural situation of humanistic and social-scientific research in the 1950s and 60s, and provides further reflection on the origins of Digital Humanities, and the values encoded in our methods today. The computer-as-intelligence was then, and remains now, a radical proposition about the nature of human and machine reasoning, whose implications are as thrilling—and frightening—as they were in the 1950s and 60s.
+
+## Conclusion
+
+Researchers in the Human Sciences adopted computational methods enthusiastically as soon as high-speed digital computers became available at the end of the 1940s. This is the first study to systematically compare the epistemic and cultural impacts of computing across the Human Sciences in the first two decades of computing. Although researchers brought different disciplinary assumptions to computing, the fundamental problem of the computer's meaningless was common across the disciplines. Researchers proposed different solutions to this problem. Sometimes they accommodated computers into existing social structures, casting them as "clerks" which merely automated low-value work in the lab or library. Sometimes they cast their work as more "experimental," considering ways that computers might actually alter the very nature of their disciplines. We have only scratched the surface in this abstract, and hope to present a fuller picture in the full paper.
+
+## References

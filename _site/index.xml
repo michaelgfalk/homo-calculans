@@ -10,7 +10,376 @@
 <atom:link href="https://homo-calculans.blog/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Wed, 03 Dec 2025 13:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 14 Dec 2025 13:00:00 GMT</lastBuildDate>
+<item>
+  <title>Methodological Discourses in the early Computational Human Sciences</title>
+  <link>https://homo-calculans.blog/posts/initial-text-analysis/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>The history of Digital Humanities is typically traced back to Humanities Computing, and the seminal research of Fr Roberto Busa SJ <span class="citation" data-cites="jones_roberto_2016">(Jones 2016)</span>. In the <em>homo calculans</em> project, we aim to provide a broader, interdisciplinary understanding of the origins of computing in the Humanities, Arts and Social Sciences. Drawing inspiration from studies by <span class="citation" data-cites="sula_early_2019">Sula and Hill (2019)</span> and <span class="citation" data-cites="kleymann_conceptual_2022">Kleymann, Niekler, and Burghardt (2022)</span>, we have assembled a corpus of 496 pioneering publications in the Computational Humanities, Arts and Social Sciences (HASS) from the 1950s and 60s. We annotate these articles with rich metadata, and subject them to text analysis in order to discover how computing impacted the HASS disciplines in the first two decades of electronic digital computing.</p>
+<p>To account for the varied disciplines in the corpus, we situate our analysis in the History of the Human Sciences [<span class="citation" data-cites="smith_fontana_1997">Smith (1997)</span>; smith_what_2020]. In the early days of computational research, the community of computational scholars was relatively small, and disciplinary boundaries were porous. A pioneering researcher such as Jean-Claude Gardin could easily make original contributions to both Anthropology <span class="citation" data-cites="gardin_typology_1965">(Gardin 1965a)</span> and Archaeology <span class="citation" data-cites="gardin_reconstructing_1965">(Gardin 1965b)</span>, drawing on Literary Studies, Sociometry (Social Network Analysis) and Geography for methodological insights. By adopting the “Computational Human Sciences” as our object of study, we have been able to generate both a highly multidisciplinary corpus and a coherent set of research questions.</p>
+<p>There is no single accepted definition of the Human Sciences. For the sake of our analysis, we adopt the definition given by Ernst Cassirer in his <em>Logik der Kulturwisschaften</em> (1961). In <em>Logik</em>, Cassirer identifies “human action” [<em>menschliches Handeln</em>] as the common object of what he calls the “Cultural Sciences.” The distinctive feature of “human action,” according to Cassirer, is its “mediatedness” [<em>Mittelbarkeit</em>]. Human actions and artefacts are not simply physical objects, but “forms of expression” [<em>Ausdrucksformen</em>], mediated by symbols, which require interpretation <span class="citation" data-cites="cassirer_zur_1980">(Cassirer 1980, 26, 51)</span>. Broadly speaking, the documents in our corpus fall into Cassirer’s definition, because they comprise early attempts to model or analyse human actions using computers, whether these actions are votes, purchases, historical deeds, acts of literary composition, or new pieces of music.</p>
+<p>The central problem raised by Cassirer’s definition is familiar to researchers in the Digital Humanities today: the problem of meaning <span class="citation" data-cites="liu_meaning_2013">(see e.g. Liu 2013)</span>. How can a dull, cold computer possibly enlighten us about the lively, fleshy meaning of all-to-human acts and symbols? This is a problem for us today, even in the age of lightning-fast personal computers and dazzling AI models. In the 1950s and 60s, researchers in the Human Sciences were faced with large, difficult, inaccessible devices locked away in University Computing Centres, and had to justify their methods to scholarly colleagues who might not even have computer access.</p>
+<p>It is in this context that we propose our three research questions:</p>
+<blockquote class="blockquote">
+<p><strong>RQ1.</strong> What were the central methods of study across the different disciplines?</p>
+<p><strong>RQ2.</strong> How did scholars explain and justify their new methods? What rhetorical or affective devices did they use to obtain acceptance for their results?</p>
+<p><strong>RQ3.</strong> How can this history help us understand the breadth of Computational Human Sciences today?</p>
+</blockquote>
+</section>
+<section id="the-corpus" class="level2">
+<h2 class="anchored" data-anchor-id="the-corpus">The Corpus</h2>
+<p>The corpus for this study includes 496 publications published between 1950 and 1969 (Table&nbsp;1). The corpus is in the form of a Zotero library, which can be viewed online, though without full-text access for copyright reasons<sup>1</sup> While most publications presented original research, the corpus also included reviews and conference reports. All items were written in English as the search was conducted in this language.</p>
+<div class="cell" data-tbl-caption="Most of the book chapters are in fact conference papers.">
+<div id="tbl-document-types" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-caption="Most of the book chapters are in fact conference papers.">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-document-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1
+</figcaption>
+<div aria-describedby="tbl-document-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Document Type</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">journalArticle</td>
+<td style="text-align: right;">355</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bookSection</td>
+<td style="text-align: right;">122</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">book</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">conferencePaper</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">magazineArticle</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">report</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The corpus was built using purposeful snowball sampling. First, we started with <span class="citation" data-cites="guetzkow_simulation_1962">Guetzkow (1962)</span>, tracing both its cited references and subsequent citations within the 1950 to 1969 timeframe. This process yielded 88 sources. Next, we examined the journal <em>Behavioral Science</em>, which featured a ‘Computers in Behavioral Science’ section from 1959 to 1967, identifying 112 relevant sources. This concentration likely explains the relative over-representation of behavioural science and psychology within the corpus. We then reviewed the journal <em>Computers and the Humanities</em> (1967–1969), locating 73 sources, as well as the 1966 annual bibliography published in 1967, which yielded 67 additional references. We did not proceed beyond 1966 due to the rapidly increasing volume of references. We then included papers from three well-known multi-disciplinary collections of the 1960s, including <span class="citation" data-cites="bessinger_literary_1964">Bessinger, Parrish, and Arader (1964)</span>, <span class="citation" data-cites="hymes_use_1965">Hymes (1965)</span> and <span class="citation" data-cites="stone_general_1966">Stone et al. (1966)</span>. At this point, we observed that several disciplines, such as Religious Studies and History/Cliometrics were under-represented. To complete the search, therefore, we conducted targeted Google Scholar searches using the keywords ‘discipline + computer’, which added 31 sources.</p>
+<p>Items in the corpus were systematically tagged for discipline and computer. We determined the disciplines of each text and any computers by reading the abstract and, if necessary, the text. Our approach was inspired by <span class="citation" data-cites="sula_early_2019">Sula and Hill (2019)</span>, but differs in an important respect. <span class="citation" data-cites="sula_early_2019">Sula and Hill (2019)</span> determine the discipline of an article by inspecting the author affiliation. Our approach prioritises how the sources themselves framed disciplinary identity and computational engagement.</p>
+<p>High-level statistics on the discipline and computer tags are show in Table&nbsp;2 and Figure&nbsp;1. At the time of writing this abstract, we have not fully normalised the discipline tags, though we intend to do so.</p>
+<div class="cell">
+<div id="tbl-discipline-tags" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-discipline-tags-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Musicology is surprisingly well represented.
+</figcaption>
+<div aria-describedby="tbl-discipline-tags-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Discipline</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Psychology</td>
+<td style="text-align: right;">71</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Behavioural science</td>
+<td style="text-align: right;">48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Literary Studies</td>
+<td style="text-align: right;">46</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Musicology</td>
+<td style="text-align: right;">42</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Linguistics</td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Statistics</td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Anthropology</td>
+<td style="text-align: right;">29</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Political Science</td>
+<td style="text-align: right;">27</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interdisciplinary</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">History</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Visual Arts</td>
+<td style="text-align: right;">16</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sociology</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Humanities</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Archaeology</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Economics</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Machine Translation</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Geography</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Religious Studies</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Natural Language Processing</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Management Science</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Art History</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cliometrics</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Education</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Classics</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Business</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Demography</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Library Studies</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">History</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Accounting</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Marketing</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Museum</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Organizational behavior</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Performing Arts</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Philosophy</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Simulation???</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Taxation</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-computers" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-computers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://homo-calculans.blog/posts/initial-text-analysis/index_files/figure-html/fig-computers-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-computers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The graph reflects IBM’s market dominance and early sponsorship of Humanities Computing.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="the-meaning-of-experiment" class="level2">
+<h2 class="anchored" data-anchor-id="the-meaning-of-experiment">The meaning of ‘experiment’</h2>
+<p>To understand the range of methods (<strong>RQ1</strong>) and their justification (<strong>RQ2</strong>), we investigate keywords in the corpus using various text-analytic techniques. In this abstract, we show just one of these techniques: lexical network analysis. Figure&nbsp;2 and Figure&nbsp;3 show lexical networks for the word “experiment” in the Psychology (n=71) and Literary Studies (n=46) articles in the corpus. To produce these networks, the documents are split into 200-word chunks, pairwise correlations are computed between all the words, the data is converted into a graphical format using iGraph, edges are dropped between words if their pairwise correlation is less than 0.35, and then the neighbourhood of order 2 is shown for the target word (in this case, “experiment”). In a nutshell, the figures show the most closely associated words with the target word, along with the associated words’ most associated words.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-psychology-correlations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-psychology-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://homo-calculans.blog/posts/initial-text-analysis/index_files/figure-html/fig-psychology-correlations-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-psychology-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Most highly correlated words with “experiment” and its neighbours, in 200-word chunks from the Psychology articles.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-literature-correlations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-literature-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://homo-calculans.blog/posts/initial-text-analysis/index_files/figure-html/fig-literature-correlations-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-literature-correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Most highly correlated words with “experiment” and its neighbours, in 200-word chunks from the Literary Studies articles.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>As can be seen, the discourse of “experiment” differs markedly in the Psychology and Literary Studies articles. In the Literary Studies articles, the experiment <em>is the use of computers</em>. Close associates of the word “experiment” include the names of popular contemporary machines (e.g.&nbsp;the IBM 1401 or 1620), and words describing the concrete process of using the computer (<em>hours</em>, <em>processed</em>, <em>verified</em>, <em>disk</em>, <em>arranged</em>, etc.). The discourse in Psychology is nothing like this. In the 1950s and 1960s, Psychology was already established as an “experimental” discipline, especially in the United States, where most of our corpus originates. Here the computer is talked about in a more abstract way, as an existing experimental paradigm is <em>computerized</em>, perhaps with a corresponding <em>reduction</em> of effort.</p>
+</section>
+<section id="the-nature-of-computation" class="level2">
+<h2 class="anchored" data-anchor-id="the-nature-of-computation">The nature of computation</h2>
+<p>As well as investigating particular methods or methodological concepts, we also investigate the concept “computational” itself. One of the most fruitful lines of inquiry is metaphor:</p>
+<blockquote class="blockquote">
+<p>As you know by now, if you have been following these lectures, computers are not giant brains at all; they are giant clerks. <span class="citation" data-cites="green_using_1961">(Green 1961, 227)</span></p>
+</blockquote>
+<p>The words “clerk” or “clerical” (including plurals and other derivations) appear in 79 articles in the corpus. Close reading of these instances indicates that there was a fluid boundary between metaphorical and literal clerks in the early days of the Computational Human Sciences. Sometimes, a computer would be gradually programmed by a research group to resemble their human clerks, until the human clerks no longer found employment in the research.</p>
+<p>Some researchers found this metaphor uninspiring:</p>
+<blockquote class="blockquote">
+<p>We are still not thinking of the computer as anything but a myriad of clerks or assistants in one convenient console. Most of the results I have just described could have been accomplished with the available means of half a century ago. We do not yet understand the true nature of the computer. And we have not yet begun to think in ways appropriate to the nature of this machine.<span class="citation" data-cites="milic_next_1966">(Milic 1966, 4)</span></p>
+</blockquote>
+<p>Researchers in this school tried to push the Computational Human Sciences furhter into the new field of Artificial Intelligence. Perhaps the computer could think differently, and allow the researcher to pose new questions. One researcher who argued this was was Gardin, who insisted that in the the process of scholar-computer interaction, the computer could gradually move beyond “clerical drudgery,” and take over the “‘intelligent’ functions of problem-solving” normally reserved to the scholar who leads the research team.</p>
+<p>The computer-as-clerk was one solution to the problem of meaning. In this metaphor, the computer merely automated non-scholarly tasks hitherto undertaken by clerical staff, rather than by the scholar her- or himself. This metaphor vividly evokes the social, moral and cultural situation of humanistic and social-scientific research in the 1950s and 60s, and provides further reflection on the origins of Digital Humanities, and the values encoded in our methods today. The computer-as-intelligence was then, and remains now, a radical proposition about the nature of human and machine reasoning, whose implications are as thrilling—and frightening—as they were in the 1950s and 60s.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Researchers in the Human Sciences adopted computational methods enthusiastically as soon as high-speed digital computers became available at the end of the 1940s. This is the first study to systematically compare the epistemic and cultural impacts of computing across the Human Sciences in the first two decades of computing. Although researchers brought different disciplinary assumptions to computing, the fundamental problem of the computer’s meaningless was common across the disciplines. Researchers proposed different solutions to this problem. Sometimes they accomodated computers into existing social structures, casting them as “clerks” which merely automated low-value work in the lab or library. Sometimes they cast their work as more “experimental,” considering ways that computers might actually alter the very nature of their disciplines. We have only scratched the surface in this abstract, and hope to present a fuller picture in the full paper.</p>
+</section>
+<section id="references" class="level2">
+
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0">
+<div id="ref-bessinger_literary_1964" class="csl-entry">
+Bessinger, Jess B. Jr., Stephen M. Parrish Parrish, and Harry F. Arader, eds. 1964. <em>Literary Data Processing Conference Proceedings</em>. New York: IBM.
+</div>
+<div id="ref-cassirer_zur_1980" class="csl-entry">
+Cassirer, Ernst. 1980. <em>Zur <span>Logik</span> <span>Der</span> <span>Kulturwissenschaften</span>: <span>Fünf</span> <span>Studien</span></em>. Darmstadt: Wissenschafltiche Buchgesellschaft.
+</div>
+<div id="ref-gardin_typology_1965" class="csl-entry">
+Gardin, J. C. 1965a. <span>“A Typology of Computer Uses in Anthropology.”</span> In <em>The Use of Computers in Anthropology</em>, edited by Dell Hymes, 103–18. Berlin, New York: DE GRUYTER MOUTON. <a href="https://doi.org/10.1515/9783111718101.103">https://doi.org/10.1515/9783111718101.103</a>.
+</div>
+<div id="ref-gardin_reconstructing_1965" class="csl-entry">
+———. 1965b. <span>“Reconstructing an Economic Network in the Ancient East with the Aid of a Computer.”</span> In <em>The Use of Computers in Anthropology</em>, edited by Dell H. Hymes and Wenner-Gren Foundation For Anthropo, 377–92. Berlin, New York: DE GRUYTER MOUTON. <a href="https://doi.org/10.1515/9783111718101.377">https://doi.org/10.1515/9783111718101.377</a>.
+</div>
+<div id="ref-green_using_1961" class="csl-entry">
+Green, Bert F. 1961. <span>“Using <span>Computers</span> to <span>Study</span> <span>Human</span> <span>Perception</span>.”</span> <em>Educational and Psychological Measurement</em> 21 (1): 227–33. <a href="https://doi.org/10.1177/001316446102100123">https://doi.org/10.1177/001316446102100123</a>.
+</div>
+<div id="ref-guetzkow_simulation_1962" class="csl-entry">
+Guetzkow, Harold Steere. 1962. <em>Simulation in Social Science; Readings</em>. Englewood Cliffs, N.J., Prentice-Hall. <a href="http://archive.org/details/simulationinsoci0000guet">http://archive.org/details/simulationinsoci0000guet</a>.
+</div>
+<div id="ref-hymes_use_1965" class="csl-entry">
+Hymes, Dell H., ed. 1965. <em>The Use of Computers in Anthropology:</em> DE GRUYTER MOUTON. <a href="https://doi.org/10.1515/9783111718101">https://doi.org/10.1515/9783111718101</a>.
+</div>
+<div id="ref-jones_roberto_2016" class="csl-entry">
+Jones, Steven E. 2016. <em>Roberto <span>Busa</span>, <span>S</span>. <span>J</span>. , and the <span>Emergence</span> of <span>Humanities</span> <span>Computing</span>: <span>The</span> <span>Priest</span> and the <span>Punched</span> <span>Cards</span></em>. London, UNITED KINGDOM: Taylor &amp; Francis Group.
+</div>
+<div id="ref-kleymann_conceptual_2022" class="csl-entry">
+Kleymann, Rabea, Andreas Niekler, and Manuel Burghardt. 2022. <span>“Conceptual <span>Forays</span>: <span>A</span> <span>Corpus</span>-Based <span>Study</span> of <span>‘<span>Theory</span>’</span> in <span>Digital</span> <span>Humanities</span> <span>Journals</span>.”</span> <em>Journal of Cultural Analytics</em> 7 (4). <a href="https://doi.org/10.22148/001c.55507">https://doi.org/10.22148/001c.55507</a>.
+</div>
+<div id="ref-liu_meaning_2013" class="csl-entry">
+Liu, Alan. 2013. <span>“The <span>Meaning</span> of the <span>Digital</span> <span>Humanities</span>.”</span> <em>PMLA</em> 128 (2): 409–23. <a href="http://www.jstor.org/stable/23489068">http://www.jstor.org/stable/23489068</a>.
+</div>
+<div id="ref-milic_next_1966" class="csl-entry">
+Milic, Louis T. 1966. <span>“The <span>Next</span> <span>Step</span>.”</span> <em>Computers and the Humanities</em> 1 (1): 3–6. <a href="https://www.jstor.org/stable/30199191">https://www.jstor.org/stable/30199191</a>.
+</div>
+<div id="ref-smith_fontana_1997" class="csl-entry">
+Smith, Roger. 1997. <em>The <span>Fontana</span> <span>History</span> of the <span>Human</span> <span>Sciences</span></em>. London: Fontana.
+</div>
+<div id="ref-stone_general_1966" class="csl-entry">
+Stone, Philip J., Dexter Dunphy, Daniel M. Ogilvie, and Marshall S. Smith, eds. 1966. <em>The General Inquirer: A Computer Approach to Content Analysis</em>. Cambridge, Mass: M.I.T. Press.
+</div>
+<div id="ref-sula_early_2019" class="csl-entry">
+Sula, Chris Alen, and Heather V Hill. 2019. <span>“The Early History of Digital Humanities: <span>An</span> Analysis of <span>Computers</span> and the <span>Humanities</span> (1966–2004) and <span>Literary</span> and <span>Linguistic</span> <span>Computing</span> (1986–2004).”</span> <em>Digital Scholarship in the Humanities</em>, November, fqz072. <a href="https://doi.org/10.1093/llc/fqz072">https://doi.org/10.1093/llc/fqz072</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><a href="https://www.zotero.org/groups/5939021/homo-calculans-corpus">https://www.zotero.org/groups/5939021/homo-calculans-corpus</a>↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <guid>https://homo-calculans.blog/posts/initial-text-analysis/</guid>
+  <pubDate>Sun, 14 Dec 2025 13:00:00 GMT</pubDate>
+  <media:content url="https://homo-calculans.blog/assets/img/ibm-7090.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Homo Calculans</title>
   <link>https://homo-calculans.blog/posts/dha25/</link>
